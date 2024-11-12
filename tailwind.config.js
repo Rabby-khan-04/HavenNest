@@ -12,6 +12,7 @@ export default {
         dark_charcoal: "#333333",
         dark_silver: "#6d6d6d",
         base: "#f7f7f7",
+        spanish_gray: "#999999",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
