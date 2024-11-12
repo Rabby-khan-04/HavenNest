@@ -39,14 +39,8 @@ const BannerSlide = ({ room, activeIndex }) => {
         style={{ backgroundColor: `${colors[activeIndex]}` }}
       >
         <div className="relative px-12 py-8 grid grid-cols-2">
-          {/* Progress Bar */}
-          <span
-            key={activeIndex}
-            className="absolute w-full h-full top-0 left-0 bg-white bg-opacity-20 progress-bar"
-          ></span>
-
           <div></div>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center relative z-20">
             <h2 className="text-2xl font-semibold font-open_sans text-white">
               ${price} <span className="text-lg">/mo</span>
             </h2>
@@ -58,6 +52,11 @@ const BannerSlide = ({ room, activeIndex }) => {
               <span className="w-20 h-0.5 before:contents relative before:absolute before:top-0 before:left-0 before:bg-white before:h-full before:w-2/4 group-hover:before:w-full before:transition-all before:duration-300 before:ease-in-out"></span>
             </button>
           </div>
+          {/* Progress Bar */}
+          <span
+            key={activeIndex}
+            className="absolute w-full h-full top-0 left-0 bg-white bg-opacity-20 progress-bar z-auto"
+          ></span>
         </div>
       </div>
     </div>

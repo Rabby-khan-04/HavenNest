@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { useSwiper } from "swiper/react";
 
 const SliderPagination = ({ rooms, activeIndex }) => {
-  console.log(activeIndex);
   const swipe = useSwiper();
 
   const handleDotClick = (index) => {
