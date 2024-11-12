@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegStar } from "react-icons/fa6";
 import { RiShareFill } from "react-icons/ri";
+import { IoIosCall } from "react-icons/io";
+import { FaStar } from "react-icons/fa";
+import { GoMail } from "react-icons/go";
 import KeyDetails from "@/components/EstateDetails/KeyDetails";
 import SectionTitle from "@/components/EstateDetails/SectionTitle";
 import Amenities from "@/components/EstateDetails/Amenities";
@@ -43,6 +46,7 @@ const EstateDetails = () => {
     overview,
     description,
     amenities,
+    listed_by,
   } = room;
 
   const keyDetails = [
@@ -107,11 +111,11 @@ const EstateDetails = () => {
           <div>
             <SectionTitle text="Key Details" />
             <div className="grid grid-cols-2 gap-5">
-              {keyDetails.map((details, idx) => (
+              {keyDetails?.map((details, idx) => (
                 <KeyDetails
                   key={idx}
-                  text={details.key}
-                  value={details.value}
+                  text={details?.key}
+                  value={details?.value}
                 />
               ))}
             </div>
@@ -127,17 +131,59 @@ const EstateDetails = () => {
           <div>
             <SectionTitle text="Amenities" />
             <div className="grid grid-cols-2 gap-5">
-              {amenities.map((amenitie, idx) => (
+              {amenities?.map((amenitie, idx) => (
                 <Amenities
                   key={idx}
-                  feature={amenitie.feature}
-                  ICON={amenitie.ICON}
+                  feature={amenitie?.feature}
+                  ICON={amenitie?.ICON}
                 />
               ))}
             </div>
           </div>
         </div>
-        <div className="col-span-2"></div>
+        <div className="col-span-2 relative">
+          <div className="sticky top-10">
+            <SectionTitle text="Listed By" />
+            <div className="flex items-center gap-5">
+              <div>
+                <img
+                  src={listed_by?.image}
+                  className="size-28 rounded-sm"
+                  alt=""
+                />
+              </div>
+              <div className="grow">
+                <h3 className="text-base font-open_sans font-bold text-dark_charcoal hover:text-dark_silver duration-150 transition-all cursor-pointer">
+                  {listed_by?.name}
+                </h3>
+                <div className="flex items-center text-xs mb-3">
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                  <FaStar />
+                </div>
+                <div className="font-open_sans text-dark_silver text-xs">
+                  <a href={`mailto:${listed_by?.email}`}>
+                    <span>{listed_by?.email}</span>
+                  </a>
+                  <a
+                    href={`tel:${listed_by?.phone}`}
+                    className="flex items-center gap-1"
+                  >
+                    <IoIosCall />
+                    <span>{listed_by?.phone}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="mt-6">
+              <button className="flex items-center gap-2 rounded-sm justify-center bg-black text-white font-open_sans font-extrabold text-sm w-full py-4">
+                <GoMail /> <span>Contact Agent</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
