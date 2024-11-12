@@ -10,6 +10,8 @@ export default {
       },
       colors: {
         dark_charcoal: "#333333",
+        dark_silver: "#6d6d6d",
+        base: "#f7f7f7",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

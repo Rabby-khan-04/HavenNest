@@ -9,11 +9,20 @@
     "area": 2000,
     "location": "120 Green St, Uptown",
     "amenities": [
-      "Internet",
-      "Air Conditioning",
-      "Fireplace",
-      "Living Room",
-      "Kitchen"
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Air Conditioning",
+        "ICON": "https://i.ibb.co/C24ybWF/Air-Conditioning.png"
+      },
+      {
+        "feature": "Fireplace",
+        "ICON": "https://i.ibb.co/jGyyYhg/Fireplace.png"
+      },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      { "feature": "Kitchen", "ICON": "https://i.ibb.co/Rc24zHF/Kitchen.png" }
     ],
     "type": "House",
     "overview": "An affordable home with all essentials, featuring a spacious living area and ample natural light.",
@@ -45,11 +54,20 @@
     "area": 2800,
     "location": "45 Sunset Blvd, Riverside",
     "amenities": [
-      "Internet",
-      "Air Conditioning",
-      "Dishwasher",
-      "Fireplace",
-      "Balcony"
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Air Conditioning",
+        "ICON": "https://i.ibb.co/C24ybWF/Air-Conditioning.png"
+      },
+      {
+        "feature": "Dishwasher",
+        "ICON": "https://i.ibb.co/gvQSfbM/Dishwasher.png"
+      },
+      {
+        "feature": "Fireplace",
+        "ICON": "https://i.ibb.co/jGyyYhg/Fireplace.png"
+      },
+      { "feature": "Balcony", "ICON": "https://i.ibb.co/zX57wYx/Balcony.png" }
     ],
     "type": "House",
     "overview": "A stunning house inspired by French architecture, featuring spacious rooms and a cozy atmosphere.",
@@ -81,12 +99,24 @@
     "area": 2240,
     "location": "320 Ashford St, Downtown",
     "amenities": [
-      "Internet",
-      "Air Conditioning",
-      "Dishwasher",
-      "Living Room",
-      "Balcony",
-      "Swimming Pool"
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Air Conditioning",
+        "ICON": "https://i.ibb.co/C24ybWF/Air-Conditioning.png"
+      },
+      {
+        "feature": "Dishwasher",
+        "ICON": "https://i.ibb.co/gvQSfbM/Dishwasher.png"
+      },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      { "feature": "Balcony", "ICON": "https://i.ibb.co/zX57wYx/Balcony.png" },
+      {
+        "feature": "Swimming Pool",
+        "ICON": "https://i.ibb.co/gmsnbKm/Swimming-Pool.png"
+      }
     ],
     "type": "House",
     "overview": "This modern home offers a spacious layout, ideal for city living with access to nearby amenities.",
@@ -118,12 +148,24 @@
     "area": 3945,
     "location": "520 Harbor Lane, Marina",
     "amenities": [
-      "Internet",
-      "Air Conditioning",
-      "Dishwasher",
-      "Living Room",
-      "Swimming Pool",
-      "Kitchen"
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Air Conditioning",
+        "ICON": "https://i.ibb.co/C24ybWF/Air-Conditioning.png"
+      },
+      {
+        "feature": "Dishwasher",
+        "ICON": "https://i.ibb.co/gvQSfbM/Dishwasher.png"
+      },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      {
+        "feature": "Swimming Pool",
+        "ICON": "https://i.ibb.co/gmsnbKm/Swimming-Pool.png"
+      },
+      { "feature": "Kitchen", "ICON": "https://i.ibb.co/Rc24zHF/Kitchen.png" }
     ],
     "type": "House",
     "overview": "Enjoy the serene marina views from this luxurious home, complete with modern interiors and spacious rooms.",
@@ -154,7 +196,19 @@
     "status": "sale",
     "area": 1500,
     "location": "789 Countryside Ave, Farmington",
-    "amenities": ["Internet", "Fireplace", "Living Room", "Kitchen", "Balcony"],
+    "amenities": [
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Fireplace",
+        "ICON": "https://i.ibb.co/jGyyYhg/Fireplace.png"
+      },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      { "feature": "Kitchen", "ICON": "https://i.ibb.co/Rc24zHF/Kitchen.png" },
+      { "feature": "Balcony", "ICON": "https://i.ibb.co/zX57wYx/Balcony.png" }
+    ],
     "type": "House",
     "overview": "A rustic family cottage with a cozy fireplace, spacious garden, and classic interiors.",
     "built_in": 2008,
@@ -172,7 +226,7 @@
       "image": "https://example.com/agent-lily.jpg",
       "phone": "555-4567"
     },
-    "image": "https://source.unsplash.com/random/800x600/?cottage",
+    "image": "https://i.ibb.co/4jQj5Wz/prop-21-1920x1280.jpg",
     "thumb": "https://source.unsplash.com/random/400x300/?cottage"
   },
   {
@@ -185,12 +239,21 @@
     "area": 3200,
     "location": "101 Cityscape Dr, Uptown",
     "amenities": [
-      "Internet",
-      "Air Conditioning",
-      "Swimming Pool",
-      "Gym",
-      "Living Room",
-      "Kitchen"
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Air Conditioning",
+        "ICON": "https://i.ibb.co/C24ybWF/Air-Conditioning.png"
+      },
+      {
+        "feature": "Swimming Pool",
+        "ICON": "https://i.ibb.co/gmsnbKm/Swimming-Pool.png"
+      },
+      { "feature": "Gym", "ICON": "https://i.ibb.co/RC9gkpR/Gym.png" },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      { "feature": "Kitchen", "ICON": "https://i.ibb.co/Rc24zHF/Kitchen.png" }
     ],
     "type": "Penthouse",
     "overview": "Experience luxury living with this penthouse featuring a large open floor plan, modern interiors, and breathtaking views.",
@@ -209,7 +272,7 @@
       "image": "https://example.com/agent-david.jpg",
       "phone": "555-7890"
     },
-    "image": "https://source.unsplash.com/random/800x600/?penthouse",
+    "image": "https://i.ibb.co/BTKzNM5/prop-17-1920x1280.jpg",
     "thumb": "https://source.unsplash.com/random/400x300/?penthouse"
   },
   {
@@ -222,12 +285,21 @@
     "area": 1800,
     "location": "455 Main St, Downtown",
     "amenities": [
-      "Internet",
-      "Air Conditioning",
-      "Dishwasher",
-      "Balcony",
-      "Living Room",
-      "Kitchen"
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Air Conditioning",
+        "ICON": "https://i.ibb.co/C24ybWF/Air-Conditioning.png"
+      },
+      {
+        "feature": "Dishwasher",
+        "ICON": "https://i.ibb.co/gvQSfbM/Dishwasher.png"
+      },
+      { "feature": "Balcony", "ICON": "https://i.ibb.co/zX57wYx/Balcony.png" },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      { "feature": "Kitchen", "ICON": "https://i.ibb.co/Rc24zHF/Kitchen.png" }
     ],
     "type": "Loft",
     "overview": "An open-concept urban loft offering stylish finishes and panoramic views, perfect for modern city dwellers.",
@@ -246,7 +318,7 @@
       "image": "https://example.com/agent-alice.jpg",
       "phone": "555-6781"
     },
-    "image": "https://source.unsplash.com/random/800x600/?loft",
+    "image": "https://i.ibb.co/BPxNLCH/prop-18-1920x1280.jpg",
     "thumb": "https://source.unsplash.com/random/400x300/?loft"
   },
   {
@@ -258,7 +330,19 @@
     "status": "sale",
     "area": 2800,
     "location": "789 Elm St, Oldtown",
-    "amenities": ["Internet", "Fireplace", "Living Room", "Kitchen", "Garden"],
+    "amenities": [
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Fireplace",
+        "ICON": "https://i.ibb.co/jGyyYhg/Fireplace.png"
+      },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      { "feature": "Kitchen", "ICON": "https://i.ibb.co/Rc24zHF/Kitchen.png" },
+      { "feature": "Garden", "ICON": "https://i.ibb.co/BNHPXCG/Garden.png" }
+    ],
     "type": "House",
     "overview": "This classic Victorian home boasts elegance and history, with spacious rooms and period details throughout.",
     "built_in": 1905,
@@ -276,7 +360,7 @@
       "image": "https://example.com/agent-tom.jpg",
       "phone": "555-7891"
     },
-    "image": "https://source.unsplash.com/random/800x600/?victorian-house",
+    "image": "https://i.ibb.co/FbcgB11/prop-19-1920x1280.jpg",
     "thumb": "https://source.unsplash.com/random/400x300/?victorian-house"
   },
   {
@@ -288,7 +372,19 @@
     "status": "rent",
     "area": 1300,
     "location": "Mountain Trail Rd, Forest Hills",
-    "amenities": ["Internet", "Fireplace", "Living Room", "Balcony", "Kitchen"],
+    "amenities": [
+      { "feature": "Internet", "ICON": "https://i.ibb.co/t8JY52B/wifi.png" },
+      {
+        "feature": "Fireplace",
+        "ICON": "https://i.ibb.co/jGyyYhg/Fireplace.png"
+      },
+      {
+        "feature": "Living Room",
+        "ICON": "https://i.ibb.co/QPMWcDv/Living-Room.png "
+      },
+      { "feature": "Balcony", "ICON": "https://i.ibb.co/zX57wYx/Balcony.png" },
+      { "feature": "Kitchen", "ICON": "https://i.ibb.co/Rc24zHF/Kitchen.png" }
+    ],
     "type": "Cabin",
     "overview": "This rustic mountain cabin provides a serene getaway with modern amenities and breathtaking views of the surrounding landscape.",
     "built_in": 2000,
@@ -306,7 +402,7 @@
       "image": "https://example.com/agent-sarah.jpg",
       "phone": "555-1235"
     },
-    "image": "https://source.unsplash.com/random/800x600/?cabin",
+    "image": "https://i.ibb.co/FYR5xy3/prop-20-1920x1280.jpg",
     "thumb": "https://source.unsplash.com/random/400x300/?cabin"
   }
 ]
