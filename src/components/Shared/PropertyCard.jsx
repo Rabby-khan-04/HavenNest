@@ -1,12 +1,16 @@
 import { Separator } from "@radix-ui/react-separator";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PropertyCard = ({ room }) => {
+  const navigate = useNavigate();
   const { id, title, bed, bath, area, price, image } = room;
 
   return (
-    <div className="w-full h-full rounded-md relative overflow-hidden group cursor-pointer">
+    <div
+      className="w-full h-full rounded-md relative overflow-hidden group cursor-pointer"
+      onClick={() => navigate(`/details/${id}`)}
+    >
       <div
         className="absolute bg-black/30 scale-100 group-hover:scale-110 duration-1000 transition-all z-10 inset-0"
         style={{

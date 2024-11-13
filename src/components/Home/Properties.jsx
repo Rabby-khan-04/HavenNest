@@ -13,7 +13,7 @@ const Properties = () => {
           </p>
 
           <button className="text-base text-dark_charcoal font-open_sans font-bold flex items-center gap-2 group py-4 mt-8">
-            View Details
+            View All
             <span className="w-20 h-0.5 before:contents relative before:absolute before:top-0 before:left-0 before:bg-dark_charcoal before:h-full before:w-2/4 group-hover:before:w-full before:transition-all before:duration-300 before:ease-in-out"></span>
           </button>
         </div>

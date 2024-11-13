@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import PropertyCard from "../Shared/PropertyCard";
-import PropertyNav from "../Shared/PropertyNav";
+import PropertyNavNext from "../Shared/PropertyNavNext";
+import PropertyNavPrev from "../Shared/PropertyNavPrev";
 import "swiper/css";
 
 const PropertyCarousel = () => {
@@ -14,12 +15,12 @@ const PropertyCarousel = () => {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
       <Swiper
         slidesPerView={4}
         spaceBetween={30}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-        className="mySwiper relative"
+        className="mySwiper overflow-visible"
       >
         {rooms.map((room) => (
           <SwiperSlide
@@ -29,7 +30,8 @@ const PropertyCarousel = () => {
             <PropertyCard room={room} />
           </SwiperSlide>
         ))}
-        <PropertyNav activeIndex={activeIndex} totalSlides={rooms.length} />
+        <PropertyNavPrev activeIndex={activeIndex} />
+        <PropertyNavNext activeIndex={activeIndex} totalSlides={rooms.length} />
       </Swiper>
     </div>
   );
