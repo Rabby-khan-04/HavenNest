@@ -18,6 +18,7 @@ const Banner = () => {
   return (
     <section className="relative">
       <Swiper
+        slidesPerView={1}
         className="mySwiper"
         loop={true}
         autoplay={{ delay: 3000 }}

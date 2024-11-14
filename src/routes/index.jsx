@@ -1,4 +1,5 @@
 import MainLayout from "@/layouts/MainLayout";
+import HeaderTransparentLayout from "@/layouts/HeaderTransparentLayout";
 import About from "@/pages/About/About";
 import ErrorPage from "@/pages/ErrorPage/ErrorPage";
 import EstateDetails from "@/pages/EstateDetails/EstateDetails";
@@ -10,13 +11,20 @@ import { createBrowserRouter } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <HeaderTransparentLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <Home />,
       },
+    ],
+  },
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
+    children: [
       {
         path: "about",
         element: <About />,

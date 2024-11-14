@@ -84,3 +84,27 @@
 .progress-bar {
   animation: slide-progress 3s linear forwards;
 }
+
+/* Meu */
+.nav__menu {
+}
+
+.nav__menu li a {
+  @apply py-2 px-4 inline-block;
+}
+
+.nav__menu li a span {
+  @apply inline-block after:transition-all after:ease-in-out after:duration-300 after:origin-left relative after:contents after:absolute after:w-0 after:bg-white after:z-50 after:h-0.5 after:-bottom-0.5 after:left-0;
+}
+
+.nav__menu li a:hover span {
+  @apply after:w-full;
+}
+
+.primary__btn {
+  @apply inline-block text-lg font-open_sans font-semibold text-black bg-white rounded-md py-2 px-4;
+}
+
+.auth__input {
+  @apply text-base text-dark_silver px-4 inline-block py-4 rounded-sm font-open_sans font-semibold  outline-none border focus-visible:border-dark_charcoal;
+}

@@ -20,7 +20,7 @@ const PropertyCarousel = () => {
         slidesPerView={4}
         spaceBetween={30}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-        className="mySwiper overflow-visible"
+        className="mySwiper"
       >
         {rooms.map((room) => (
           <SwiperSlide
