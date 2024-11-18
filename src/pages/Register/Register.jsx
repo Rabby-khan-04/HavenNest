@@ -1,9 +1,17 @@
 import SocialLogin from "@/components/AuthCom/SocialLogin";
 import SectionTitle from "@/components/EstateDetails/SectionTitle";
+import AuthContext from "@/context/AuthContext";
+import auth from "@/firebase/firebase.config";
+import { updateProfile } from "firebase/auth";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { GoEyeClosed, GoEye } from "react-icons/go";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const [togglePass, setTogglePass] = useState(false);
   const {
     register,
     handleSubmit,
@@ -15,8 +23,21 @@ const Register = () => {
     const photo = data.photo;
     const email = data.email;
     const password = data.password;
+    const displayName = `${fname} ${lname}`;
 
-    console.log(fname, lname, photo, email, password);
+    createUser(email, password)
+      .then(() => {
+        updateProfile(auth.currentUser, { displayName, photoURL: photo })
+          .then(() => {
+            toast.success("User Created Successfully!");
+          })
+          .catch((error) => {
+            toast.error(error.message);
+          });
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
   return (
     <section className="h-screen flex items-center justify-center">
@@ -127,19 +148,30 @@ const Register = () => {
             >
               Password
             </label>
-            <input
-              id="password"
-              type="password"
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 6,
-                  message: "Password mustbe at least 6 characters",
-                },
-              })}
-              placeholder="Enter your password"
-              className="auth__input"
-            />
+            <div className="relative">
+              <input
+                id="password"
+                type={togglePass ? "text" : "password"}
+                {...register("password", {
+                  required: "Password is required",
+                  pattern: {
+                    value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                    message:
+                      "Password must include an uppercase and lowercase letter, and be at least 6 characters",
+                  },
+                })}
+                placeholder="Enter your password"
+                className="auth__input w-full"
+              />
+              <button
+                onClick={() => setTogglePass((prev) => !prev)}
+                type="button"
+                className="text-xl text-dark_charcoal inline-block absolute right-1"
+                style={{ top: "calc(50% - 10px)" }}
+              >
+                {togglePass ? <GoEyeClosed /> : <GoEye />}
+              </button>
+            </div>
             {errors.password && (
               <span className="text-xs font-bold font-open_sans text-red-600">
                 {errors.password.message}

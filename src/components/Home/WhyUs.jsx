@@ -33,7 +33,7 @@ const WhyUs = () => {
     <section className="py-24 bg-gradient-to-r from-black from-50% to-transparent to-50%">
       <div className="container grid grid-cols-2 gap-12">
         <div className="-mr-24">
-          <h2 className="text-white font-old_standard font-bold text-5xl mb-4">
+          <h2 className="text-white font-old_standard font-bold text-5xl mb-4 animate__bounceIn">
             Why Choose us
           </h2>
           <p className="text-base font-open_sans text-dark_silver font-bold mb-4">

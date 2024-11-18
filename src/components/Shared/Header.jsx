@@ -3,10 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import PropTypes from "prop-types";
 import AuthContext from "@/context/AuthContext";
+import { toast } from "react-toastify";
+import { Tooltip } from "react-tooltip";
 
 const Header = ({ transparant = false }) => {
   const [navbar, setNavbar] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user, signOutUser } = useContext(AuthContext);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -17,6 +19,16 @@ const Header = ({ transparant = false }) => {
       }
     });
   }, []);
+
+  const handleSignOutUser = () => {
+    signOutUser()
+      .then(() => {
+        toast.success("Successfully log out");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
 
   return (
     <header
@@ -61,12 +73,23 @@ const Header = ({ transparant = false }) => {
         <div className="flex items-center">
           {user ? (
             <div className="flex items-center gap-4">
-              <img
-                src="https://i.ibb.co.com/VvNp22F/user.png"
-                className="inline-block size-[42px]"
-                alt=""
-              />
-              <button className="primary__btn">Logout</button>
+              <Link to="/account">
+                <img
+                  src={
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://i.ibb.co.com/VvNp22F/user.png"
+                  }
+                  className="inline-block size-[42px] object-cover object-center rounded-full"
+                  data-tooltip-id="user_name"
+                  data-tooltip-content={user?.displayName}
+                  data-tooltip-place="top"
+                  alt=""
+                />
+              </Link>
+              <button onClick={handleSignOutUser} className="primary__btn">
+                Logout
+              </button>
             </div>
           ) : (
             <Link
@@ -78,6 +101,7 @@ const Header = ({ transparant = false }) => {
           )}
         </div>
       </nav>
+      {user && <Tooltip id="user_name" />}
     </header>
   );
 };

@@ -1,12 +1,17 @@
 import SectionTitle from "@/components/EstateDetails/SectionTitle";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import SocialLogin from "@/components/AuthCom/SocialLogin";
+import AuthContext from "@/context/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [forgetPassword, setforgetPassword] = useState(false);
+  const { loginUser, passwordReset } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -16,12 +21,27 @@ const Login = () => {
     const email = data.email;
     const password = data.password;
 
-    console.log(email, password);
+    loginUser(email, password)
+      .then(() => {
+        toast.success("User Logged In Successfully!");
+        navigate(location.state ? location.state : "/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
 
   const handleForgetPassword = (data) => {
-    console.log(data);
+    const email = data.user_email;
+    passwordReset(email)
+      .then(() => {
+        toast.success(`Password reset link sent to ${email}.`);
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
   };
+
   return (
     <section className="h-screen flex items-center justify-center">
       <div className="w-[576px] rounded-md border broder-[#e2e2e2] p-8 bg-base">

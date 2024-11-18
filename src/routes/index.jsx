@@ -7,6 +7,8 @@ import Home from "@/pages/Home/Home";
 import Login from "@/pages/Login/Login";
 import Register from "@/pages/Register/Register";
 import { createBrowserRouter } from "react-router-dom";
+import ProcetedRoutes from "./ProcetedRoutes";
+import Account from "@/pages/Account/Account";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +41,19 @@ const router = createBrowserRouter([
       },
       {
         path: "details/:estateId",
-        element: <EstateDetails />,
+        element: (
+          <ProcetedRoutes>
+            <EstateDetails />
+          </ProcetedRoutes>
+        ),
+      },
+      {
+        path: "account",
+        element: (
+          <ProcetedRoutes>
+            <Account />
+          </ProcetedRoutes>
+        ),
       },
     ],
   },
